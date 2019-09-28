@@ -9,18 +9,19 @@ public static float bottomY = -20f;
     // Start is called before the first frame update
     void Start()
     {
-     Debug.Log("applespawned");  
+     Debug.Log("applespawned"+ Time.time);  
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < bottomY)
+        if (transform.position.y < bottomY){
+		
 			Destroy (this.gameObject);
-
+		
 			ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
 
 			apScript.AppleDestroyed();
-
+			}
     }
 }
